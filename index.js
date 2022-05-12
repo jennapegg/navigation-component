@@ -15,8 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     positionUnderline(navItemSpan);
 });
 
-console.log(Window.pageXOffset);
-
 navigationItems.forEach((navItem) => {
 
     navItem.addEventListener('click', function () {
