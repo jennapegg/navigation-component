@@ -1,19 +1,27 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .navigation-container {
-    max-width: 1264px;
+    max-width: 1225px;
     position: relative;
-    border-bottom:1.5px solid #b7b7b7;
+    margin: 0 auto;
 }
 
 .navigation-list {
     display: flex;
     list-style: none;
     justify-content: space-between;
-    padding: 36px 110px 9px;
+    padding: 36px 110px 0;
+    margin:0 15px 0;
+    border-bottom:1.5px solid #b7b7b7;
 }
 
 .navigation-list-item {
     color: #b7b7b7;
-    /* padding: 0 30px; */
+    padding-bottom: 15px;
     font-size: 17px;
     font-family: sans-serif;
     letter-spacing: 0.5px;
@@ -36,6 +44,7 @@
 .js-underline {
     background-color: #111111;
     position: absolute;
-    bottom: -1.5px;
+    bottom: 0;
     height: 1.5px;
+    transition: all .4s;
 }
