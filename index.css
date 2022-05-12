@@ -12,19 +12,20 @@
 
 .navigation-list {
     display: flex;
+    flex-direction: column;
     list-style: none;
     justify-content: space-between;
-    padding: 36px 110px 0;
+    padding: 36px 10px 0;
     margin:0 15px 0;
     border-bottom:1.5px solid #b7b7b7;
 }
 
 .navigation-list-item {
     color: #b7b7b7;
-    padding-bottom: 15px;
-    font-size: 17px;
+    padding: 0 0 0 10px;
+    font-size: 16px;
     font-family: sans-serif;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.9px;
 }
 
 .navigation-list-item span {
@@ -47,4 +48,25 @@
     bottom: 0;
     height: 1.5px;
     transition: all .4s;
+}
+
+@media only screen and (min-width: 600px) {
+    .navigation-list {
+        padding: 36px 50px 0;
+        flex-direction: row;
+    }
+    .navigation-list-item {
+        padding: 0 10px 10px;
+    }
+}
+
+
+@media only screen and (min-width: 1225px) {
+    .navigation-list {
+        padding: 36px 100px 0;
+    }
+    .navigation-list-item {
+        padding: 0 0 10px;
+    }
+
 }
