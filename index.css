@@ -28,6 +28,11 @@
     padding-left: 0;
 }
 
+.navigation-list-item:hover {
+    color: #3571a9;
+    cursor: pointer;
+}
+
 .navigation-list-item.active {
     color: #111111;
 }
