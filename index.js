@@ -9,7 +9,7 @@ function positionUnderline(currentNavItem) {
     activeUnderline.style.left = left + 'px';
 }
 
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', () => {
     var navItemSpan = activeItem.querySelector('span');
 
     positionUnderline(navItemSpan);
@@ -24,4 +24,11 @@ navigationItems.forEach((navItem) => {
         document.querySelector('.active').classList.remove('active');
         this.classList.add('active');
     });
+});
+
+window.addEventListener('resize', () => {
+    currentActive = document.querySelector('.navigation-list-item.active');
+    var navItemSpan = currentActive.querySelector('span');
+
+    positionUnderline(navItemSpan);
 });
