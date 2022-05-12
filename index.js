@@ -3,7 +3,7 @@ var navigationItems = document.querySelectorAll('.navigation-list-item'),
     activeItem = document.querySelector('.navigation-list-item.active');
 
 function positionUnderline(currentNavItem) {
-    var left = currentNavItem.getBoundingClientRect().x - 9,
+    var left = currentNavItem.offsetLeft,
         width = currentNavItem.offsetWidth;
     activeUnderline.style.width = width + 'px';
     activeUnderline.style.left = left + 'px';
@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     positionUnderline(navItemSpan);
 });
+
+console.log(Window.pageXOffset);
 
 navigationItems.forEach((navItem) => {
 
