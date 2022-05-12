@@ -1,16 +1,27 @@
 var navigationItems = document.querySelectorAll('.navigation-list-item'),
-    activeUnderline = document.querySelector('.js-underline');
+    activeUnderline = document.querySelector('.js-underline'),
+    activeItem = document.querySelector('.navigation-list-item.active');
+
+function positionUnderline(currentNavItem) {
+    var left = currentNavItem.getBoundingClientRect().x - 9,
+        width = currentNavItem.offsetWidth;
+    activeUnderline.style.width = width + 'px';
+    activeUnderline.style.left = left + 'px';
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    var navItemSpan = activeItem.querySelector('span');
+
+    positionUnderline(navItemSpan);
+});
 
 navigationItems.forEach((navItem) => {
 
     navItem.addEventListener('click', function () {
-        var navItemSpan = this.querySelector('span'),
-            navItemLeft = navItemSpan.getBoundingClientRect().x,
-            navItemWidth = navItemSpan.offsetWidth;
+        var navItemSpan = this.querySelector('span');
 
-        activeUnderline.style.width = navItemWidth + 'px';
-        activeUnderline.style.left = navItemLeft + 'px';
-
+        positionUnderline(navItemSpan);
+        document.querySelector('.active').classList.remove('active');
         this.classList.add('active');
     });
 });
