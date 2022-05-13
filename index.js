@@ -11,12 +11,12 @@ function positionUnderline(currentNavItem) {
 
 function getCityTime(city) {
     var currentCity = document.querySelector('.city'),
-        currentTime = document.querySelector('.city-time'),
+        timeHeading = document.querySelector('.city-time'),
         timeZone = city.getAttribute('data-timezone'),
-        date = new Date().toLocaleString("en-US", {timeZone: timeZone, timeStyle: "short"});
+        currentTime = new Date().toLocaleString("en-US", {timeZone: timeZone, timeStyle: "short"});
 
     currentCity.innerText = city.innerText;
-    currentTime.innerText = date;
+    timeHeading.innerText = currentTime;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
