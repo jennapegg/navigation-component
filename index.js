@@ -9,10 +9,21 @@ function positionUnderline(currentNavItem) {
     activeUnderline.style.left = left + 'px';
 }
 
+function getCityTime(city) {
+    var currentCity = document.querySelector('.city'),
+        currentTime = document.querySelector('.city-time'),
+        timeZone = city.getAttribute('data-timezone'),
+        date = new Date().toLocaleString("en-US", {timeZone: timeZone, timeStyle: "short"});
+
+    currentCity.innerText = city.innerText;
+    currentTime.innerText = date;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     var navItemSpan = activeItem.querySelector('span');
 
     positionUnderline(navItemSpan);
+    getCityTime(activeItem);
 });
 
 navigationItems.forEach((navItem) => {
@@ -23,6 +34,7 @@ navigationItems.forEach((navItem) => {
         positionUnderline(navItemSpan);
         document.querySelector('.active').classList.remove('active');
         this.classList.add('active');
+        getCityTime(navItem);
     });
 });
 
