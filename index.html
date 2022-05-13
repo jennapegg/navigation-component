@@ -10,18 +10,20 @@
 <body>
     <div class="navigation-container">
         <ul class="navigation-list">
-            <li class="navigation-list-item active"><span>Cupertino</span></li>
-            <li class="navigation-list-item"><span>New York City</span></li>
-            <li class="navigation-list-item"><span>London</span></li>
-            <li class="navigation-list-item"><span>Amsterdam</span></li>
-            <li class="navigation-list-item"><span>Tokyo</span></li>
-            <li class="navigation-list-item"><span>Hong Kong</span></li>
-            <li class="navigation-list-item"><span>Sydney</span></li>
+            <li class="navigation-list-item active" data-timezone="America/Los_Angeles"><span>Cupertino</span></li>
+            <li class="navigation-list-item" data-timezone="America/New_York"><span>New York City</span></li>
+            <li class="navigation-list-item" data-timezone="Europe/London"><span>London</span></li>
+            <li class="navigation-list-item" data-timezone="Europe/Amsterdam"><span>Amsterdam</span></li>
+            <li class="navigation-list-item" data-timezone="Asia/Tokyo"><span>Tokyo</span></li>
+            <li class="navigation-list-item" data-timezone="Asia/Hong_Kong"><span>Hong Kong</span></li>
+            <li class="navigation-list-item" data-timezone="Australia/Sydney"><span>Sydney</span></li>
         </ul>
         <div class="js-underline"></div>
     </div>
     <div class="timezone-container">
-        <h2>The Local Time in <span class="city"></span> is: <span class="city-time"></span></h2>
+        <h2>Local Time in</h2>
+        <h2 class="city"></h2>
+        <h2 class="city-time"></h2>
     </div>
     <script src="index.js"></script>
 </body>
